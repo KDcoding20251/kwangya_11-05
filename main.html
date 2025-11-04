@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <link rel="stylesheet" type="text/css" href="public/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>광야</title>
+</head>
+<body>
+
+    <header class="header">
+        <h1><img src="https://i.postimg.cc/140hhkzm/logo.jpg" alt="광덕고등학교 로고" onclick="location.reload()"></h1>
+        <div class="search-container">
+            <input type="text" placeholder="검색어를 입력하세요">
+            <button type="submit">검색</button>
+        </div>
+    </header>
+    
+    <hr class="header-line">
+
+    <div class="nav-container">
+        <div class="nav-left">
+            <a href="#" class="nav-button" onclick="location.replace('/introduce/introduce.html')">이건 무슨 사이트인가?</a>
+            <a href="#" class="nav-button" onclick="location.replace('/anonymous/anonymous.html')">익명게시판</a>
+            <a href="#" class="nav-button" onclick="location.replace('/lost/lost.html')">분실물</a>
+        </div>
+        <div class="nav-right">
+            <a id="authButton" href="#" class="nav-button login" onclick="location.replace('/login/login.html')">로그인</a>
+        </div>
+    </div>
+    
+    <div class="content-section">
+        <div class="post-container">
+            <div class="section-title">최신 게시글</div>
+            <ul id="latestPostsList" class="post-list">
+                <li class="post-item">최신 게시물을 불러오는 중...</li>
+        </ul>
+        </div>
+
+        <div class="content-section">
+        <div class="lost-container">
+            <div class="section-title">분실물 게시판</div>
+            <ul id="latestLostsList" class="lost-list">
+                <li class="lost-item">최신 게시물을 불러오는 중...</li>
+        </ul>
+        </div>
+    </div>
+    <script type="module" src="/script.js">
+    </script>
+</body>
+</html>
+

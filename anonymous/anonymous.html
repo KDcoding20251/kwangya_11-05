@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <link rel="stylesheet" type="text/css" href="../anonymous.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>익명게시판 | 광야</title>
+</head>
+<body>
+
+<header class="header">
+    <h1><img src="https://i.postimg.cc/140hhkzm/logo.jpg" alt="광덕고등학교 로고" onclick="location.replace('/')"></h1>
+    <div class="search-container">
+        <input type="text" placeholder="검색어를 입력하세요">
+        <button type="submit">검색</button>
+    </div>
+</header>
+
+<hr class="header-line">
+
+<div class="nav-container">
+    <div class="nav-left">
+            <a href="#" class="nav-button" onclick="location.replace('/introduce/introduce.html')">이건 무슨 사이트인가?</a>
+            <a href="#" class="nav-button"onclick="location.replace('/')">홈 </a>
+            <a href="#" class="nav-button" onclick="location.replace('/lost/lost.html')">분실물</a>
+        </div>
+        <div class="nav-right">
+            <a id="authButton" href="#" class="nav-button login" onclick="location.replace('/login/login.html')">로그인</a>
+        </div>
+</div>
+
+<div class="content-section">
+    <div class="post-container" style="width: 100%;">
+        <div class="section-title">익명 게시판</div>
+            <input type="text" id="postTitle" placeholder="제목을 입력하세요." style="width: 100%; margin-bottom: 10px;">
+            <textarea id="postContent" placeholder="여기에 내용을 입력하세요..."></textarea>
+            <button id="submitPost">게시물 작성</button>
+            <h2>게시물 목록</h2>
+            <div id="postsList">
+                <p>게시물을 불러오는 중...</p>
+        </div>
+    </div>
+</div>
+<script type="module" src="../anonymous.js"></script>
+</body>
+</html>
+
+

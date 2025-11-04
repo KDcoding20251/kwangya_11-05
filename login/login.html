@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="/login-page.css">
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+</head>
+
+<body>
+  <main id="main-holder">
+    <h1 id="login-header">Login</h1>
+    <img id="logo" src="https://i.postimg.cc/140hhkzm/logo.jpg">
+    <form id="login-form">
+      <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
+      <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
+      <input type="submit" value="Login" id="login-form-submit">
+    </form>
+    <a id="signup-btn" href="/signup.html">
+      만약 계정이 없다면?  회원가입
+    </a>
+  
+  </main>
+<script>
+    // TODO: YOUR_API_KEY, YOUR_AUTH_DOMAIN 등을 실제 값으로 변경하세요.
+    const firebaseConfig = {
+      apiKey: "AIzaSyBEjBUuLnB8YGF4ZGf4fmriXXRnXTkKTk0",
+      authDomain: "kwangya-e4917.firebaseapp.com",
+      projectId: "kwangya-e4917",
+      storageBucket: "kwangya-e4917.firebasestorage.app",
+      messagingSenderId: "774380066093",
+      appId: "1:774380066093:web:d76c79d669ed8e86a3efa4",
+      measurementId: "G-HFCT75SE8P"
+    };
+
+  // Firebase 초기화
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+  <script src="/login-page.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이건 무슨 사이트인가?</title>
+</head>
+<body>
+
+    <header class="header">
+        <link rel="stylesheet" href="/introduce.css">
+        <h1><img src="https://i.postimg.cc/140hhkzm/logo.jpg" alt="광덕고등학교 로고" onclick="location.replace('../main.html')"></h1>
+        <div class="search-container">
+            <input type="text" placeholder="검색어를 입력하세요">
+            <button type="submit">검색</button>
+        </div>
+    </header>
+    
+    <hr class="header-line">
+
+    <div class="nav-container">
+        <div class="nav-left">
+            <a href="#" class="nav-button"onclick="location.replace('/')">홈 </a>
+            <a href="#" class="nav-button" onclick="location.replace('/anonymous/anonymous.html')">익명게시판</a>
+            <a href="#" class="nav-button" onclick="location.replace('/lost/lost.html')">분실물</a>
+        </div>
+        <div class="nav-right">
+            <a id="authButton" href="#" class="nav-button login" onclick="location.replace('/login/login.html')">로그인</a>
+        </div>
+    </div>
+    
+    <!-- 종이 느낌의 콘텐츠 영역 -->
+    <div class="main-content">
+        <div class="paper-section">
+            <h2>저희 홈페이지를 소개합니다!</h2>
+            <p>
+                안녕하세요! 저희 광덕고등학교 커뮤니티 사이트에 오신 것을 환영합니다.
+                이곳은 학생 모두가 자유롭게 소통하고 정보를 공유할 수 있는 공간입니다.
+            </p>
+            <p>
+                익명 게시판을 통해 평소 말하기 어려웠던 고민을 나누거나,
+                우리 학교 근처의 숨은 맛집을 추천받을 수도 있습니다.
+                또한, 학교의 중요한 행사나 일정을 한눈에 확인하고,
+                혹시 모를 분실물을 찾거나 습득물을 신고하는 기능도 제공하고 있습니다.
+            </p>
+            <p>
+                이 사이트는 여러분의 활발한 참여로 만들어지고 성장합니다.
+                건강한 소통 문화를 만들어가는 데 함께 해 주시면 감사하겠습니다.
+                궁금한 점이 있다면 언제든지 문의해주세요!
+                </p>
+
+            <p>
+                🟡🟡(완전하게 베포된 홈페이지가 아닙니다.)🟡🟡<p></p>
+                🟡🟡(지금 보시는 이 페이지는 동아리 발표회를 위해 만들어 졌습니다.)🟡🟡
+                </p>
+                <p style="margin-top: 15%;">
+                -made by 광덕고 코딩동아리-
+            </p>
+        </div>
+    </div>
+    <script type="module" src="../introduce.js"></script>
+</body>
+</html>

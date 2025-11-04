@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <link rel="stylesheet" type="text/css" href="../anonymous.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>익명게시판 | 광야</title>
+</head>
+<body>
+
+<header class="header">
+    <h1><img src="https://i.postimg.cc/140hhkzm/logo.jpg" alt="광덕고등학교 로고" onclick="location.replace('/')"></h1>
+    <div class="search-container">
+        <input type="text" placeholder="검색어를 입력하세요">
+        <button type="submit">검색</button>
+    </div>
+</header>
+
+<hr class="header-line">
+
+<div class="nav-container">
+    <div class="nav-left">
+            <a href="#" class="nav-button " onclick="location.replace('../anonymous.html')">목록으로 돌아가기</a>
+        </div>
+</div>
+    
+<div class="post-header">
+    <h1 id="postTitle">게시물 제목을 불러오는 중...</h1>
+    <div id="postDetails"></div> 
+</div>
+
+<div id="postContent">
+    게시물 내용을 불러오는 중입니다...
+</div>
+
+<div class="like-area" style="text-align: center; margin-top: 20px;">
+    <button id="likeButton">👍 좋아요 (0)</button>
+</div>
+
+<hr>
+
+<div class="comment-section">
+    <h2>댓글</h2>
+    
+    <div class="comment-input-area">
+        <textarea id="commentInput" placeholder="댓글을 입력하세요."></textarea>
+        <button id="submitComment">댓글 작성</button>
+        <div style="clear: both;"></div> </div>
+
+    <div id="commentsList">
+        <p>댓글을 불러오는 중...</p>
+    </div>
+</div>
+<script type="module" src="../detail_anonymous.js"></script>
+</body>
+</html>
+
+

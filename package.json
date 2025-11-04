@@ -1,0 +1,16 @@
+{
+  "name": "school-community-main",
+  "version": "1.0.0",
+  "description": "고등학교버전 에타 게시판 기능 댓글 로그인 관리자/유저 (인증) 아바타 서버 배포 안드로이드/아이폰 미니게임",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "firebase": "^12.5.0"
+  }
+}

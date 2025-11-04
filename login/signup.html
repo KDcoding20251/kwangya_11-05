@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/login-page.css">
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
+</head>
+
+<body>
+    <main id="main-holder">
+        <h1 id="login-header">Sign up</h1>
+        <img id="logo" src="https://i.postimg.cc/140hhkzm/logo.jpg">
+        <form id="signup-form">
+            <input type="text" name="nickname" id="nickname-field" class="login-form-field" placeholder="Nickname">
+            <input type="text" name="username" id="username-field" class="login-form-field" placeholder="ID">
+            <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
+            <input type="password" name="confirm-password" id="confirm-password-field" class="login-form-field" placeholder="Confirm Password">
+            <input type="submit" value="Sign up" id="signup-form-submit">
+        </form>
+        <a href="/login.html">
+            이미 계정이 있으신가요? 로그인
+        </a>
+    </main>
+
+    <script>
+        // TODO: 실제 Firebase 설정 값으로 변경
+        const firebaseConfig = { 
+            apiKey: "AIzaSyBEjBUuLnB8YGF4ZGf4fmriXXRnXTkKTk0",
+            authDomain: "kwangya-e4917.firebaseapp.com",
+            projectId: "kwangya-e4917",
+            storageBucket: "kwangya-e4917.firebasestorage.app",
+            messagingSenderId: "774380066093",
+            appId: "1:774380066093:web:d76c79d669ed8e86a3efa4",
+            measurementId: "G-HFCT75SE8P"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script src="/signup-page.js" defer></script> 
+</body>
+
+</html>
