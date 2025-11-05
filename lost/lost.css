@@ -1,0 +1,282 @@
+body {
+    font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+/* ===== 헤더 ===== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 50px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.header h1 img {
+    height: 100px;
+    cursor: pointer;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-container input[type="text"] {
+    width: 250px;
+    padding: 10px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 25px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.search-container input[type="text"]:focus {
+    border-color: #007bff;
+}
+
+.search-container button {
+    background-color: #566A8E;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-left: 5px;
+    transition: background-color 0.3s;
+}
+
+.search-container button:hover {
+    background-color: #455a73;
+}
+
+.header-line {
+    border: 0;
+    height: 1px;
+    background-color: #dee2e6;
+    margin: 0;
+}
+
+/* ===== 네비게이션 ===== */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 50px;
+    background-color: #fff;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-button {
+    padding: 12px 28px;
+    background-color: #566A8E;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: bold;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+    border: none;
+}
+
+.nav-button:hover {
+    background-color: #455a73;
+    transform: translateY(-2px);
+}
+
+.nav-button.logout {
+    background-color: #dc3545;
+}
+
+/* ===== 본문 ===== */
+.content-section {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* 중앙 정렬된 게시글 컨테이너 */
+.lost-container {
+    width: 100%;
+    max-width: 700px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+}
+
+/* 제목 및 본문 입력 */
+.lostTitle,
+#lostContent,
+#commentInput {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+    padding: 12px 15px;
+    font-size: 15px;
+    outline: none;
+    resize: vertical;
+    transition: border-color 0.3s;
+}
+
+.lostTitle:focus,
+#lostContent:focus,
+#commentInput:focus {
+    border-color: #007bff;
+}
+
+#lostContent {
+    height: 200px;
+    margin-bottom: 15px;
+}
+
+/* ===== 버튼 공통 ===== */
+button, .nav-button {
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#submitlost,
+#submitComment,
+#likeButton {
+    display: inline-block;
+    background-color: #566A8E;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 25px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#submitlost:hover,
+#submitComment:hover,
+#likeButton:hover {
+    background-color: #455a73;
+    transform: translateY(-2px);
+}
+
+/* ===== 게시물 상세 ===== */
+.lost-header {
+    max-width: 700px;
+    margin: 40px auto 20px auto;
+    text-align: center;
+}
+
+#lostTitle {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+#lostDetails {
+    font-size: 13px;
+    color: #adb5bd;
+}
+
+/* 게시물 본문 */
+#lostContent {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* 좋아요 */
+.like-area {
+    max-width: 700px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* 댓글 섹션 */
+.comment-section {
+    max-width: 700px;
+    margin: 30px auto 80px auto;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 25px;
+}
+
+.comment-input-area {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#commentsList {
+    margin-top: 15px;
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #343a40;
+    border-bottom: 2px solid #566A8E;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* ===== 분실물 작성 버튼 및 폼 ===== */
+.write-btn-area {
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+#toggleWriteBtn {
+    background-color: #566A8E;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 25px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#toggleWriteBtn:hover {
+    background-color: #455a73;
+    transform: translateY(-2px);
+}
+
+#writeForm {
+    margin-bottom: 30px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#writeForm input, 
+#writeForm textarea {
+    margin-bottom: 10px;
+}
+
+/* 분실물 목록 스타일 */
+#lostsList {
+    margin-top: 15px;
+}
+
+#lostsList p {
+    color: #6c757d;
+    text-align: center;
+}
