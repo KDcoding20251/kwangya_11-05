@@ -4,6 +4,14 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase
 import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
 import { getFirestore, collection, query, orderBy, limit, getDocs } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js';
 
+const API_KEY = '1ddaaa3cb8a046139b70b2a8a938f5ba'; // 발급받은 API 키
+const OFFICE_CODE = 'J10'; // 시도교육청 코드 (예: 서울특별시)
+const SCHOOL_CODE = '7530934'; // 학교 고유 코드
+const TODAY_DATE = getFormattedDate(); // 오늘 날짜 (YYYYMMDD 형식)
+const API_URL = `https://open.neis.go.kr/hub/mealServiceDietInfo?` +
+                `KEY=${API_KEY}&Type=json&pIndex=1&pSize=100&` +
+                `ATPT_OFCDC_SC_CODE=${OFFICE_CODE}&SD_SCHUL_CODE=${SCHOOL_CODE}&` +
+                `MLSV_YMD=${TODAY_DATE}`;
 // 1. Firebase 설정 (실제 프로젝트 설정으로 대체해야 합니다)
 const firebaseConfig = {
     apiKey: "AIzaSyBEjBUuLnB8YGF4ZGf4fmriXXRnXTkKTk0",
@@ -95,6 +103,14 @@ function handleLoginRedirect() {
 
 // **참고:** onAuthStateChanged는 페이지 로드 시 Firebase 상태를 확인하고
 // 자동으로 updateAuthButton을 실행하므로, DOMContentLoaded 리스너는 필수가 아닙니다.
+
+function getFormattedDate() {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+    return `${year}${month}${day}`;
+}
 
 const POSTS_COLLECTION = "posts";
 const LOSTS_COLLECTION = "losts"; 
@@ -216,3 +232,55 @@ async function loadLatestLosts() {
 
 // 4. 페이지 로드 시 게시물 불러오기 실행
 document.addEventListener('DOMContentLoaded', loadLatestPosts, loadLatestLosts);
+
+async function fetchMealData() {
+    const menuContainer = document.getElementById('meal-menu');
+    menuContainer.innerHTML = '급식 정보를 가져오는 중입니다...';
+
+    try {
+        // 1. API 호출
+        const response = await fetch(API_URL);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+
+        // 2. 데이터 파싱 및 확인
+        // 나이스 API 응답 구조: data.mealServiceDietInfo[1].row
+        const mealInfo = data.mealServiceDietInfo;
+        
+        if (mealInfo && mealInfo.length > 1 && mealInfo[1].row) {
+            const mealList = mealInfo[1].row;
+            
+            // 3. HTML 생성
+            let menuHTML = '';
+            mealList.forEach(meal => {
+                const mealTime = meal.MMEAL_SC_NM; // 예: 중식
+                // DDLISH_NM (메뉴) 데이터에서 괄호 안의 알레르기 정보 등을 제거
+                const dishName = meal.DDISH_NM.replace(/\([^)]+\)/g, '').split('<br/>').join(', '); 
+                
+                menuHTML += `
+                    <div>
+                        <h2>${mealTime}</h2>
+                        <p>${dishName}</p>
+                    </div>
+                    <hr>
+                `;
+            });
+
+            // 4. HTML에 반영
+            menuContainer.innerHTML = menuHTML;
+
+        } else {
+            // 급식 데이터가 없는 경우
+            menuContainer.innerHTML = `<p>⚠️ 오늘 급식 정보가 없습니다.</p>`;
+        }
+
+    } catch (error) {
+        console.error('급식 정보를 가져오는 중 오류 발생:', error);
+        menuContainer.innerHTML = `<p>❌ 오류 발생: 급식 정보를 불러올 수 없습니다.</p>`;
+    }
+}
+
+// 함수 실행
+fetchMealData();
